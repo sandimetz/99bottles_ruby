@@ -53,4 +53,8 @@ class Bottles
       "one"
     end
   end
+
+  def successor(number)
+    number - 1
+  end
 end
