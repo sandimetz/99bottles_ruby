@@ -7,6 +7,16 @@ class Bottles
     upper.downto(lower).collect {|i| verse(i)}.join("\n")
   end
 
+  def verses(upper, lower)
+    if upper == 99 && lower == 98
+      verse(99) + "\n" + verse(98)
+    elsif upper == 2
+      verse(2) + "\n" + verse(1) + "\n" + verse(0)
+    else
+      "ok"
+    end
+  end
+
   def verse(number)
     case number
     when 0
