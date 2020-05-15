@@ -17,6 +17,7 @@ class Bottles
   end
 
   def quantity(number)
+    BottleNumber.new(number).quantity(number)
     if number == 0
       "no more"
     else
