@@ -28,10 +28,6 @@ class Bottles
     BottleNumber.new(number).action
   end
 
-  def pronoun(number)
-    BottleNumber.new(number).pronoun
-  end
-
   def successor(number)
     BottleNumber.new(number).successor(number)
   end
