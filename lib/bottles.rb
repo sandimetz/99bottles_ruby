@@ -29,11 +29,6 @@ class Bottles
   end
 
   def pronoun(number)
-    if number == 1
-      "it"
-    else
-      "one"
-    end
     BottleNumber.new(number).pronoun(number)
   end
 
