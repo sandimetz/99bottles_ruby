@@ -56,3 +56,6 @@ class Bottles
     end
   end
 end
+
+class BottleNumber
+end
