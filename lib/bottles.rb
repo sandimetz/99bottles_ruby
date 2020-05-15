@@ -67,7 +67,7 @@ class BottleNumber
     end
   end
 
-  def pronoun(delete_me=nil)
+  def pronoun
     if number == 1
       "it"
     else
