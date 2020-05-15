@@ -25,7 +25,7 @@ class Bottles
   end
 
   def action(number)
-    BottleNumber.new(number).action(number)
+    BottleNumber.new(number).action
   end
 
   def pronoun(number)
