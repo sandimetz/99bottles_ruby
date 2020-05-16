@@ -44,8 +44,8 @@ class BottleNumber
     if number == 1
       "bottle"
     else
-      "bottles"
     end
+    "bottles"
   end
 
   def action
