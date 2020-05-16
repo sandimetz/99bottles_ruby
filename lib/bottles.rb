@@ -31,6 +31,8 @@ class BottleNumber
     registry.prepend(candidate)
   end
 
+  BottleNumber.register(self)
+
   def self.handles?(number)
     true
   end
