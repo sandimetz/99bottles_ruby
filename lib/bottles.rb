@@ -30,6 +30,10 @@ class BottleNumber
     registry.prepend(candidate)
   end
 
+  def self.inherited(candidate)
+    register(candidate)
+  end
+
   BottleNumber.register(self)
 
   def self.handles?(number)
