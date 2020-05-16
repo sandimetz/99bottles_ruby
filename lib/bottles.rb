@@ -25,6 +25,10 @@ class BottleNumber
       6 => BottleNumber6)[number].new(number)
   end
 
+  def self.handles?(number)
+    true
+  end
+
   attr_reader :number
   def initialize(number)
     @number = number
