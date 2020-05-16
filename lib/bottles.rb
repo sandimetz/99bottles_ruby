@@ -26,6 +26,10 @@ class BottleVerse
 
   attr_reader :number, :bottle_number
 
+  def initialize(bottle_number)
+    @bottle_number = bottle_number
+  end
+
   def initialize(number)
     @number = number
     @bottle_number = number
