@@ -8,7 +8,7 @@ class Bottles
   end
 
   def verse(number)
-    bottle_number      = bottle_number_for(number)
+    bottle_number      = BottleNumber.for(number)
     next_bottle_number = bottle_number_for(bottle_number.successor)
     # next_bottle_number = bottle_number.successor
 
