@@ -27,6 +27,10 @@ class BottleNumber
     @registry ||= []
   end
 
+  def self.register(candidate)
+    registry.prepend(candidate)
+  end
+
   def self.handles?(number)
     true
   end
