@@ -23,7 +23,7 @@ class BottleNumber
   end
 
   def self.registry
-    @registry ||= []
+    @registry ||= [BottleNumber]
   end
 
   def self.register(candidate)
