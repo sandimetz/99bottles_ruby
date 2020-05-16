@@ -13,7 +13,7 @@ class Bottles
 
     "#{bottle_number} ".capitalize +
       "of beer on the wall, " +
-    "#{bottle_number.quantity} #{bottle_number.container} of beer.\n" +
+    "#{bottle_number} of beer.\n" +
     "#{bottle_number.action}, " +
     "#{next_bottle_number.quantity} #{next_bottle_number.container} " +
       "of beer on the wall.\n"
