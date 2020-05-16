@@ -82,4 +82,12 @@ class BottleNumber1 < BottleNumber
   def container
     "bottle"
   end
+
+  def pronoun
+    if number == 1
+      "it"
+    else
+      "one"
+    end
+  end
 end
