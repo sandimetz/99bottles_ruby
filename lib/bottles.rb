@@ -52,10 +52,6 @@ class BottleNumber
   end
 
   def pronoun
-    if number == 1
-      "it"
-    else
-    end
     "one"
   end
 
