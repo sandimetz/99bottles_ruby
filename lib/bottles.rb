@@ -84,4 +84,7 @@ class BottleNumber1 < BottleNumber
 end
 
 class BottleNumber6 < BottleNumber
+  def container
+    "six-pack"
+  end
 end
