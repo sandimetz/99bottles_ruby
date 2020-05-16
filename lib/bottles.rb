@@ -23,6 +23,10 @@ class BottleNumber
       find {|candidate| candidate.handles?(number)}.new(number)
   end
 
+  def self.registry
+    @registry ||= []
+  end
+
   def self.handles?(number)
     true
   end
