@@ -19,23 +19,16 @@ end
 
 class BottleNumber
   def self.for(number)
-    registry.find {|candidate| candidate.handles?(number)}.new(number)
-  end
-
-  def self.registry
-    @registry ||= [BottleNumber]
-  end
-
-  def self.register(candidate)
-    registry.prepend(candidate)
-  end
-
-  def self.inherited(candidate)
-    register(candidate)
-  end
-
-  def self.handles?(number)
-    true
+    case number
+    when 0
+      BottleNumber0
+    when 1
+      BottleNumber1
+    when 6
+      BottleNumber6
+    else
+      BottleNumber
+    end.new(number)
   end
 
   attr_reader :number
@@ -69,10 +62,6 @@ class BottleNumber
 end
 
 class BottleNumber0 < BottleNumber
-  def self.handles?(number)
-    number == 0
-  end
-
   def quantity
     "no more"
   end
@@ -87,10 +76,6 @@ class BottleNumber0 < BottleNumber
 end
 
 class BottleNumber1 < BottleNumber
-  def self.handles?(number)
-    number == 1
-  end
-
   def container
     "bottle"
   end
@@ -101,10 +86,6 @@ class BottleNumber1 < BottleNumber
 end
 
 class BottleNumber6 < BottleNumber
-  def self.handles?(number)
-    number == 6
-  end
-
   def quantity
     "1"
   end
