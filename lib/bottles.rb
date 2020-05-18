@@ -1,8 +1,9 @@
 class CountdownSong
   attr_reader :verse_template, :max, :min
 
-  def initialize(verse_template: BottleVerse)
+  def initialize(verse_template: BottleVerse, max: 99, min: 0)
     @verse_template = verse_template
+    @max, @min = max, min
   end
 
   def song
