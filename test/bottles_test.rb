@@ -83,7 +83,7 @@ class CountdownSongTest < Minitest::Test
         .verse(500))
   end
 
-  def test_a_couple_verses
+  def test_verses
     expected =
      "This is verse 99.\n" +
      "\n" +
