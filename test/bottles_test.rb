@@ -17,6 +17,10 @@ end
 
 
 class BottleVerseTest < Minitest::Test
+  def setup
+    @role_player = BottleVerse
+  end
+
   def test_verse_general_rule_upper_bound
     expected =
       "99 bottles of beer on the wall, " +
