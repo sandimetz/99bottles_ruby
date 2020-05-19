@@ -3,6 +3,14 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require_relative '../lib/bottles'
 
+
+class VerseFake
+  def self.lyrics(number)
+    "This is verse #{number}.\n"
+  end
+end
+
+
 class BottleVerseTest < Minitest::Test
   def test_verse_general_rule_upper_bound
     expected =
@@ -68,11 +76,6 @@ class BottleVerseTest < Minitest::Test
   end
 end
 
-class VerseFake
-  def self.lyrics(number)
-    "This is verse #{number}.\n"
-  end
-end
 
 class CountdownSongTest < Minitest::Test
   def test_verse
