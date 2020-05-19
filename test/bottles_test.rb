@@ -17,6 +17,8 @@ end
 
 
 class BottleVerseTest < Minitest::Test
+  include VerseRoleTest
+
   def setup
     @role_player = BottleVerse
   end
