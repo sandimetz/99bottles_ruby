@@ -51,7 +51,7 @@ class BottleNumber
       BottleNumber6
     else
       BottleNumber
-    end.new(number)
+    end.new(number, max: 99)
   end
 
   attr_reader :number, :max
