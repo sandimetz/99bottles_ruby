@@ -41,7 +41,7 @@ end
 
 
 class BottleNumber
-  def self.for(number, max: 99)
+  def self.for(number, max:)
     case number
     when 0
       BottleNumber0
@@ -81,7 +81,7 @@ class BottleNumber
   end
 
   def successor
-    BottleNumber.for(number - 1)
+    BottleNumber.for(number - 1, max: max)
   end
 end
 
@@ -95,7 +95,7 @@ class BottleNumber0 < BottleNumber
   end
 
   def successor
-    BottleNumber.for(max)
+    BottleNumber.for(max, max: max)
   end
 end
 
