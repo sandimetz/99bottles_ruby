@@ -149,7 +149,6 @@ end
 
 class Bottles99IntegrationTest < Minitest::Test
   def test_partial_7_bottles_song
-    skip
     expected = <<-SONG
 7 bottles of beer on the wall, 7 bottles of beer.
 Take one down and pass it around, 1 six-pack of beer on the wall.
