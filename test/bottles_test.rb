@@ -139,6 +139,44 @@ class CountdownSongTest < Minitest::Test
 end
 
 class Bottles99IntegrationTest < Minitest::Test
+  def test_partial_7_bottles_song
+    skip
+    expected = <<-SONG
+7 bottles of beer on the wall, 7 bottles of beer.
+Take one down and pass it around, 1 six-pack of beer on the wall.
+
+1 six-pack of beer on the wall, 1 six-pack of beer.
+Take one down and pass it around, 5 bottles of beer on the wall.
+
+5 bottles of beer on the wall, 5 bottles of beer.
+Take one down and pass it around, 4 bottles of beer on the wall.
+
+4 bottles of beer on the wall, 4 bottles of beer.
+Take one down and pass it around, 3 bottles of beer on the wall.
+
+3 bottles of beer on the wall, 3 bottles of beer.
+Take one down and pass it around, 2 bottles of beer on the wall.
+
+2 bottles of beer on the wall, 2 bottles of beer.
+Take one down and pass it around, 1 bottle of beer on the wall.
+
+1 bottle of beer on the wall, 1 bottle of beer.
+Take it down and pass it around, no more bottles of beer on the wall.
+
+No more bottles of beer on the wall, no more bottles of beer.
+Go to the store and buy some more, 7 bottles of beer on the wall.
+    SONG
+
+    assert_equal(
+      expected,
+      CountdownSong.new(
+        verse_template: BottleVerse,
+        max: 7,
+        min: 0
+      ).song
+    )
+  end
+
   def test_99_bottles_song
     expected = <<-SONG
 99 bottles of beer on the wall, 99 bottles of beer.
