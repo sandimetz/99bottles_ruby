@@ -93,6 +93,15 @@ class BottleVerseTest < Minitest::Test
       "99 bottles of beer on the wall.\n"
     assert_equal expected, BottleVerse.lyrics(0)
   end
+
+  def test_verse_0_with_explicit_max_value
+    expected =
+      "No more bottles of beer on the wall, " +
+      "no more bottles of beer.\n" +
+      "Go to the store and buy some more, " +
+      "7 bottles of beer on the wall.\n"
+    assert_equal expected, BottleVerse.lyrics(0, max: 7)
+  end
 end
 
 
