@@ -139,7 +139,7 @@ class CountdownSongTest < Minitest::Test
         .verses(99, 97))
   end
 
-  def test_song
+  def test_song_with_explicit_max_min_values
     expected =
       "This is verse 47.\n" +
       "\n" +
@@ -155,6 +155,27 @@ class CountdownSongTest < Minitest::Test
       CountdownSong.new(verse_template: VerseFake,
                         max: 47,
                         min: 43)
+        .song)
+  end
+
+  def test_song
+    expected =
+      "This is verse 11.\n" +
+      "\n" +
+      "This is verse 10.\n" +
+      "\n" +
+      "This is verse 9.\n" +
+      "\n" +
+      "This is verse 8.\n" +
+      "\n" +
+      "This is verse 7.\n" +
+      "\n" +
+      "This is verse 6.\n" +
+      "\n" +
+      "This is verse 5.\n"
+    assert_equal(
+      expected,
+      CountdownSong.new(verse_template: VerseFake)
         .song)
   end
 end
@@ -502,10 +523,7 @@ Go to the store and buy some more, 99 bottles of beer on the wall.
 
     assert_equal(
       expected,
-      CountdownSong.new(
-        verse_template: BottleVerse,
-        min: 0
-      ).song
+      CountdownSong.new(verse_template: BottleVerse).song
     )
   end
 end
