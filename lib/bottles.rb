@@ -15,7 +15,7 @@ class CountdownSong
   end
 
   def verse(number)
-    verse_template.lyrics(number)
+    verse_template.lyrics(number, max: max)
   end
 end
 
