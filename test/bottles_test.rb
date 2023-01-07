@@ -10,7 +10,7 @@ module VerseRoleTest
 end
 
 class VerseFake
-  def self.lyrics(number)
+  def self.lyrics(number, max: nil)
     "This is verse #{number}.\n"
   end
 end
