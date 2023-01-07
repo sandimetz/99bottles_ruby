@@ -26,6 +26,10 @@ class BottleVerse
       99
     end
 
+    def min
+      0
+    end
+
     def lyrics(number, max: self.max)
       new(BottleNumber.for(number, max: max)).lyrics
     end

@@ -7,6 +7,7 @@ module VerseRoleTest
   def test_plays_verse_role
     assert_respond_to @role_player, :lyrics
     assert_respond_to @role_player, :max
+    assert_respond_to @role_player, :min
   end
 end
 
@@ -14,6 +15,10 @@ class VerseFake
   class << self
     def max
       11
+    end
+
+    def min
+      5
     end
 
     def lyrics(number, max: nil)
