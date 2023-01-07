@@ -54,9 +54,10 @@ class BottleNumber
     end.new(number)
   end
 
-  attr_reader :number
-  def initialize(number)
+  attr_reader :number, :max
+  def initialize(number, max: 99)
     @number = number
+    @max = max
   end
 
   def to_s
