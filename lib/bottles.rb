@@ -95,7 +95,7 @@ class BottleNumber0 < BottleNumber
   end
 
   def successor
-    BottleNumber.for(99)
+    BottleNumber.for(max)
   end
 end
 
