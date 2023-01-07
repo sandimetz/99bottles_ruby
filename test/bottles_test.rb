@@ -499,7 +499,6 @@ Go to the store and buy some more, 99 bottles of beer on the wall.
       expected,
       CountdownSong.new(
         verse_template: BottleVerse,
-        max: 99,
         min: 0
       ).song
     )
