@@ -6,12 +6,19 @@ require_relative '../lib/bottles'
 module VerseRoleTest
   def test_plays_verse_role
     assert_respond_to @role_player, :lyrics
+    assert_respond_to @role_player, :max
   end
 end
 
 class VerseFake
-  def self.lyrics(number, max: nil)
-    "This is verse #{number}.\n"
+  class << self
+    def max
+      11
+    end
+
+    def lyrics(number, max: nil)
+      "This is verse #{number}.\n"
+    end
   end
 end
 
