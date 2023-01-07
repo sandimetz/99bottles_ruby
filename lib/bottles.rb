@@ -41,7 +41,7 @@ end
 
 
 class BottleNumber
-  def self.for(number)
+  def self.for(number, max: 99)
     case number
     when 0
       BottleNumber0
@@ -51,7 +51,7 @@ class BottleNumber
       BottleNumber6
     else
       BottleNumber
-    end.new(number, max: 99)
+    end.new(number, max: max)
   end
 
   attr_reader :number, :max
