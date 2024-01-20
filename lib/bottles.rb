@@ -22,7 +22,7 @@ end
 
 class BottleVerse
   def self.lyrics(number)
-    new(BottleNumber.for(number)).lyrics
+    new(BottleNumber.new(number)).lyrics
   end
 
   attr_reader :bottle_number
@@ -41,19 +41,6 @@ end
 
 
 class BottleNumber
-  def self.for(number)
-    case number
-    when 0
-      BottleNumber0
-    when 1
-      BottleNumber1
-    when 6
-      BottleNumber6
-    else
-      BottleNumber
-    end.new(number)
-  end
-
   attr_reader :number
   def initialize(number)
     @number = number
@@ -64,56 +51,40 @@ class BottleNumber
   end
 
   def quantity
-    number.to_s
+    BOTTLE_NUMBER_DEFAULTS[number]&.[](:quantity) || number.to_s
   end
 
   def container
-    "bottles"
+    BOTTLE_NUMBER_DEFAULTS[number]&.[](:container) || "bottles"
   end
 
   def action
-    "Take #{pronoun} down and pass it around"
+    BOTTLE_NUMBER_DEFAULTS[number]&.[](:action) || "Take #{pronoun} down and pass it around"
   end
 
   def pronoun
-    "one"
+    BOTTLE_NUMBER_DEFAULTS[number]&.[](:pronoun) || "one"
   end
 
   def successor
-    BottleNumber.for(number - 1)
+    BOTTLE_NUMBER_DEFAULTS[number]&.[](:successor) ?  BottleNumber.new(BOTTLE_NUMBER_DEFAULTS[number]&.[](:successor)) : BottleNumber.new(number - 1)
   end
 end
 
-class BottleNumber0 < BottleNumber
-  def quantity
-    "no more"
-  end
+BOTTLE_NUMBER_DEFAULTS = {
+  0 => {
+    quantity: "no more",
+    action: "Go to the store and buy some more",
+    successor: 99
+  },
+  1 => {
+    container: "bottle",
+    pronoun: "it"
+  },
+  6 => {
+    quantity: "1",
+    container: "six-pack"
+  }
+}
 
-  def action
-    "Go to the store and buy some more"
-  end
-
-  def successor
-    BottleNumber.for(99)
-  end
-end
-
-class BottleNumber1 < BottleNumber
-  def container
-    "bottle"
-  end
-
-  def pronoun
-    "it"
-  end
-end
-
-class BottleNumber6 < BottleNumber
-  def quantity
-    "1"
-  end
-
-  def container
-    "six-pack"
-  end
-end
+pp BOTTLE_NUMBER_DEFAULTS[9]&.[](:quantity)
