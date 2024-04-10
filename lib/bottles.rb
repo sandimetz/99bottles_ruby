@@ -60,10 +60,10 @@ class BottleNumber
   end
 
   def action
-    if self.number == 0
+    if number == 0
       "Go to the store and buy some more"
     else
-      "Take #{pronoun(self.number)} down and pass it around"
+      "Take #{pronoun(number)} down and pass it around"
     end
   end
 
