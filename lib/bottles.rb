@@ -75,7 +75,7 @@ class BottleNumber
     end
   end
 
-  def successor(number)
+  def successor(number=:FIXME)
     if self.number == 0
       99
     else
