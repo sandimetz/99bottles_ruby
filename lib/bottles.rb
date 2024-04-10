@@ -51,7 +51,7 @@ class BottleNumber
     end
   end
 
-  def container(number=:FIXME)
+  def container
     if self.number == 1
       "bottle"
     else
