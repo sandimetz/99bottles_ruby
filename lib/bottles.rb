@@ -29,7 +29,7 @@ class Bottles
   end
 
   def pronoun(number)
-    BottleNumber.new(number).pronoun(number)
+    BottleNumber.new(number).pronoun
   end
 
   def successor(number)
