@@ -43,7 +43,7 @@ class BottleNumber
     @number = number
   end
 
-  def quantity(number)
+  def quantity(number=:FIXME)
     if self.number == 0
       "no more"
     else
