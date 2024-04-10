@@ -67,7 +67,7 @@ class BottleNumber
     end
   end
 
-  def pronoun
+  def pronoun(number=:FIXME)
     if self.number == 1
       "it"
     else
