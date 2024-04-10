@@ -59,7 +59,7 @@ class BottleNumber
     end
   end
 
-  def action(number=:FIXME)
+  def action
     if self.number == 0
       "Go to the store and buy some more"
     else
