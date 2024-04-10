@@ -76,10 +76,10 @@ class BottleNumber
   end
 
   def successor
-    if self.number == 0
+    if number == 0
       99
     else
-      self.number - 1
+      number - 1
     end
   end
 end
