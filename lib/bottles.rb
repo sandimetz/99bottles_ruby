@@ -44,10 +44,10 @@ class BottleNumber
   end
 
   def quantity(number)
-    if number == 0
+    if self.number == 0
       "no more"
     else
-      number.to_s
+      self.number.to_s
     end
   end
 
