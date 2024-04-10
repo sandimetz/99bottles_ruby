@@ -52,7 +52,7 @@ class BottleNumber
   end
 
   def container(number)
-    if number == 1
+    if self.number == 1
       "bottle"
     else
       "bottles"
