@@ -13,6 +13,7 @@ class BottlesTest < Minitest::Test
     assert_equal expected, Bottles.new.verse(99)
   end
 
+=begin
   def test_another_verse
     skip
     expected =
@@ -393,4 +394,5 @@ class BottlesTest < Minitest::Test
     SONG
     assert_equal expected, Bottles.new.song
   end
+=end
 end
